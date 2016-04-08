@@ -5,6 +5,10 @@
 	display: block;
 	text-align: center !important;
 }
+
+.postbox .inside {
+	display: table;
+}
 </style>
 
 <div class="wrap">
@@ -65,6 +69,24 @@
 															<input name="vizad_shop_cron" type="checkbox" id="vizad_shop_cron" />													
 														<?php endif; ?>	
 														<span><?php esc_attr_e( 'Habilitar atualizações via rotina automática', 'vizad-mytrius' ); ?></span>
+													</label>
+												</fieldset>
+											</td>
+											<td>
+											</td>
+										</tr>
+										<tr valign="top">								
+
+											<td scope="row">
+												<fieldset>
+													<legend class="screen-reader-text"><span>Salvar JSON de carga</span></legend>
+													<label for="vizad_json_save">
+														<?php if($vizad_json_save == true): ?>
+															<input name="vizad_json_save" type="checkbox" id="vizad_json_save" checked />
+														<?php else: ?>
+															<input name="vizad_json_save" type="checkbox" id="vizad_json_save" />													
+														<?php endif; ?>	
+														<span><?php esc_attr_e( 'Salvar JSON de carga', 'vizad-mytrius' ); ?></span>
 													</label>
 												</fieldset>
 											</td>
@@ -153,25 +175,14 @@
 						<a href="http://www.vizad.com.br">
 							<p><img style="width: 50%;display: block;margin: 0 auto;" class="vizad-logo" src="<?php echo plugins_url() . '/vizad-mytrios-integration/images/bold-black-vizad.png' ?>" alt="<?php esc_attr_e( 'Agência Vizad Logo', 'vizad-mytrius' ); ?>"></p>
 						</a><br>
-						<h3><span><?php esc_attr_e(
-									'Informações da Integração', 'vizad-mytrius'
-								); ?></span></h3>
+						<h3 style="text-align: center;"><a href="http://www.vizad.com.br"><span><?php esc_attr_e(
+									'Website', 'vizad-mytrius'
+								); ?></span></a></h3>
+						<h3 style="text-align: center;"><a href="https://www.facebook.com/thizaom"><span><?php esc_attr_e(
+									'Facebook', 'vizad-mytrius'
+								); ?></span></a></h3>
 
 						<div class="inside">
-
-
-						<ul class="">							
-
-								<li><?php esc_attr_e( 'Última Atualização', 'vizad-mytrius' ); ?>: <br><strong><?php echo date('m/d/Y H:i:s', $vizad_last_updated); ?></strong></li>
-								<li><?php esc_attr_e( 'Produtos Importados', 'vizad-mytrius' ); ?>: 
-									<?php if(count($vizad_shop_products)): ?>
-										<strong><?php echo count($vizad_shop_products); ?></strong>
-									<?php else: ?>
-										<strong>Não disponível</strong>
-									<?php endif;?>	
-								</li>
-
-						</ul>
 						</div>
 
 					</div>
